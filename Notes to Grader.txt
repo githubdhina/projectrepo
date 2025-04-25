@@ -1,0 +1,5 @@
+Folder for each task reside in respective branch
+For example: Master branch Task 1 and Task3 inside Task 1 folder in which the Task 3 was tried.
+Task 2 folder is in  feature x folder
+For Task 4 - A public repo is created and branches created for these assignment tasks are pushed.
+https://github.com/githubdhina/projectrepo/branches
