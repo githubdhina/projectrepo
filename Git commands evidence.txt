@@ -1,0 +1,290 @@
+<DummyUserName> ~
+$ cd <DummyRootFolder>\Task1\projectrepo
+bash: cd: too many arguments
+
+<DummyUserName> ~
+$ cd M:
+
+<DummyUserName> /m
+$ cd "<DummyRootFolder>\Task1\projectrepo"
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo
+$ ls
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo
+$ git int
+git: 'int' is not a git command. See 'git --help'.
+
+The most similar command is
+        init
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo
+$ git init
+Initialized empty Git repository in M:/<DummyRootFolder>/Task1/projectrepo/.git/
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (master)
+$ git add -A
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (master)
+$ git commit -m "Adding Readme.md file for projectrepo"
+[master (root-commit) 1490770] Adding Readme.md file for projectrepo
+ 1 file changed, 21 insertions(+)
+ create mode 100644 README.md
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (master)
+$ git branch featurex
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (master)
+$ git switch featurex
+Switched to branch 'featurex'
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (featurex)
+$ git branch
+* featurex
+  master
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (featurex)
+$ git add -A
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (featurex)
+$
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (featurex)
+$  git commit -m "Adding feature.py to featurex branch"
+[featurex 4ec10ac] Adding feature.py to featurex branch
+ 1 file changed, 5 insertions(+)
+ create mode 100644 Task2/feature.py
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (featurex)
+$ git switch main
+fatal: invalid reference: main
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (featurex)
+$ git switch master
+Switched to branch 'master'
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (master)
+$ ls
+README.md
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (master)
+$ git add -A
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (master)
+$ git commit -m "Added conflicttask.txt file to master branch"
+[master 9260f63] Added conflicttask.txt file to master branch
+ 1 file changed, 1 insertion(+)
+ create mode 100644 Task3/conflicttask.txt
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (master)
+$ git branch conflictfeature
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (master)
+$ git switch conflictfeature
+Switched to branch 'conflictfeature'
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (conflictfeature)
+$ git add -A
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (conflictfeature)
+$ git commit -m "Edited conflicttask.txt file in conflictfeature branch"
+[conflictfeature 541d38d] Edited conflicttask.txt file in conflictfeature branch
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (conflictfeature)
+$ git switch master
+Switched to branch 'master'
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (master)
+$ git git merge featureconflict
+git: 'git' is not a git command. See 'git --help'.
+
+The most similar command is
+        init
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (master)
+$ git merge featureconflict
+merge: featureconflict - not something we can merge
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (master)
+$ git merge conflictfeature
+error: Your local changes to the following files would be overwritten by merge:
+        Task3/conflicttask.txt
+Please commit your changes or stash them before you merge.
+Aborting
+Updating 9260f63..541d38d
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (master)
+$ git commit -m "ConflictTask.txt file edited in master branch"
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   Task3/conflicttask.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (master)
+$ git add -A
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (master)
+$ git commit -m "ConflictTask.txt file edited in master branch"
+[master b213f29] ConflictTask.txt file edited in master branch
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (master)
+$ git merge conflictfeature
+Auto-merging Task3/conflicttask.txt
+CONFLICT (content): Merge conflict in Task3/conflicttask.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (master|MERGING)
+$ git add -A
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (master|MERGING)
+$ git commit
+hint: Waiting for your editor to close the file...       0 [sig] bash 1335! sigpacket::process: Suppressing signal 18 to win32 process (pid 34788)
+                                                                                                                                                   721487 [sig] bash 1335! sigpacket::process: Suppressing signal 18 to win32 process (pid 34788)
+[master e2447d1] Merge branch 'conflictfeature'
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (master)
+$ git remote add origin https://github.com/githubdhina/projectrepo.git
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (master)
+$ git push -u origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/githubdhina/projectrepo.git'
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (master)
+$ git push -u origin master
+remote: Permission to githubdhina/projectrepo.git denied to avevadhina.
+fatal: unable to access 'https://github.com/githubdhina/projectrepo.git/': The requested URL returned error: 403
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (master)
+$ ^C
+
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (master)
+$ ^C
+
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (master)
+$ git config user.email "mail2dheena@gmail.com"
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (master)
+$ git push -u origin master
+remote: Permission to githubdhina/projectrepo.git denied to avevadhina.
+fatal: unable to access 'https://github.com/githubdhina/projectrepo.git/': The requested URL returned error: 403
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (master)
+$ git push -u origin master
+Enumerating objects: 19, done.
+Counting objects: 100% (19/19), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (11/11), done.
+Writing objects: 100% (19/19), 1.95 KiB | 996.00 KiB/s, done.
+Total 19 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/githubdhina/projectrepo.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (master)
+$ git switch conflictfeature
+Switched to branch 'conflictfeature'
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (conflictfeature)
+$ git push origin ^C
+
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (conflictfeature)
+$ git push -u origin conflictfeature
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote:
+remote: Create a pull request for 'conflictfeature' on GitHub by visiting:
+remote:      https://github.com/githubdhina/projectrepo/pull/new/conflictfeature
+remote:
+To https://github.com/githubdhina/projectrepo.git
+ * [new branch]      conflictfeature -> conflictfeature
+branch 'conflictfeature' set up to track 'origin/conflictfeature'.
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (conflictfeature)
+$ git branch
+* conflictfeature
+  featurex
+  master
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (conflictfeature)
+$ git switch featurex
+Switched to branch 'featurex'
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (featurex)
+$ git push -u origin featurex
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 429 bytes | 429.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote:
+remote: Create a pull request for 'featurex' on GitHub by visiting:
+remote:      https://github.com/githubdhina/projectrepo/pull/new/featurex
+remote:
+To https://github.com/githubdhina/projectrepo.git
+ * [new branch]      featurex -> featurex
+branch 'featurex' set up to track 'origin/featurex'.
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (featurex)
+$ git switch master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (master)
+$ git add -A
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (master)
+$ git push origin master
+Everything up-to-date
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (master)
+$ git commit -m "Notes added"
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (master)
+$ git push origin master^C
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (master)
+$ cls
+bash: cls: command not found
+g
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (master)
+$ git branch
+  conflictfeature
+  featurex
+* master
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (master)
+$ git add -A
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (master)
+$ git commit -m "Notes added"
+[master 3b1b8f2] Notes added
+ 1 file changed, 5 insertions(+)
+ create mode 100644 Notes to Grader.txt
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (master)
+$ git push origin master
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 526 bytes | 526.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/githubdhina/projectrepo.git
+   e2447d1..3b1b8f2  master -> master
+
+<DummyUserName> /m/<DummyRootFolder>/Task1/projectrepo (master)
+$
