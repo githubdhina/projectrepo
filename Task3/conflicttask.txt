@@ -1,1 +1,1 @@
-TestEditedInMasterBranch
+TestEditedInMasterBranch and Merged Changes TestEditedInConflictBranch
